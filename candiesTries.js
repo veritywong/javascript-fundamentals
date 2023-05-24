@@ -9,11 +9,11 @@ class Candies {
     //     });
     // }
 
-    searchNames() {
-        return this.candies.map((candy) => {
-            return candy.name;
-        });
-    }
+    // searchNames() {
+    //     return this.candies.map((candy) => {
+    //         return candy.name;
+    //     });
+    // }
 
     searchCandies(firstLetters, maxPrice) {
         return this.candies.filter((filteredCandies) => {
@@ -65,3 +65,10 @@ console.log(candiesList.searchCandies('Ma', 10));
 // [ 'Skitties', 'Skittles' ] // Starbust excluded: it's more than 4
 module.exports = Candies;
 
+
+// Will's version using simpler filter syntax
+// const searchCandies = (searchString, maxPrice) => {
+//     let matchingCandies = candies.filter(candy => candy.name.startsWith(searchString) && candy.price < maxPrice);
+  
+//     return matchingCandies.map(candy => candy.name); 
+//   }
