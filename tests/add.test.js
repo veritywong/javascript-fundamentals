@@ -9,5 +9,5 @@ describe('add', () => {
     it('adds 3 and 5', () => {
         let result = add(3, 5)
         expect(result).toBe(8)
-    })
+    });
 });
