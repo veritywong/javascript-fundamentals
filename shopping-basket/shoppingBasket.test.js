@@ -29,4 +29,23 @@ describe('ShoppingBasket', () => {
 
         expect(basket.getTotalPrice()).toBe(5.98);
     })
+
+    it('discounts total price by the given amount', () => {
+      const fakeCandy = {
+          getPrice: () => 2.99
+        }
+
+      const fakeCandyTwo = {
+        getPrice: () => 2.99
+      }
+
+      const basket = new ShoppingBasket();
+
+      basket.addItem(fakeCandy);
+      basket.addItem(fakeCandyTwo);
+
+      basket.applyDiscount(1);
+
+      expect(basket.getTotalPrice()).toBe(4.98);
+  })
 })
