@@ -6,14 +6,12 @@ describe('Weather', () => {
         const mockWeatherClient = {
             fetchWeatherData: jest.fn(),
         };
-
         mockWeatherClient.fetchWeatherData.mockResolvedValueOnce({
             name: 'Bristol'
         })
 
         const weather = new Weather(mockWeatherClient);
 
-        
         weather.load('Bristol')
             .then(() => {
                 return weather.getWeatherData()
