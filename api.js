@@ -9,10 +9,12 @@ const fetchPokemon = (pokemonname) => {
                 id: data.id,
                 height: data.height,
                 weight: data.weight,
-                
+                types: data.types.map((typeData) => {
+                    return typeData.type.name;
+                })
             }
-            return pokemonInfo;
-        })
+            console.log(pokemonInfo);
+        });
 }
  
 module.exports = fetchPokemon;
